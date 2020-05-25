@@ -23,7 +23,7 @@ function App() {
         settings.shortBreak = shortBreakv;
         settings.longBreak = longBreakv;
         settings.sessions = sessionsv;
-        settings.longSessionInterval = longBreakIntervalv;
+        settings.longBreakInterval = longBreakIntervalv;
         localStorage.setItem('settings', JSON.stringify(settings));
         console.log('Settings changed');
         
@@ -33,6 +33,13 @@ function App() {
     }
 
     settings = JSON.parse(localStorage.getItem('settings'));
+        settings = {
+        work: 0.07, // for debugging
+        shortBreak: 0.03,
+        longBreak: 0.2,
+        sessions: 3,
+        longBreakInterval: 3
+    };
 
     return ( 
         <div>
